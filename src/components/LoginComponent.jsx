@@ -1,29 +1,33 @@
 import React, { useState } from "react";
-import { LoginAPI } from "../api/AuthAPI";
+import { LoginAPI, GoogleSignInAPI } from "../api/AuthAPI";
 import LinkedinLogo from "../assets/linkedinLogo.png";
-import { useNavigate } from "react-router-dom";
 import "../Sass/LoginComponent.scss";
+import GoogleButton from 'react-google-button'
+import { useNavigate } from "react-router-dom"; // Import de useNavigate
 import { toast } from "react-toastify";
 
 export default function LoginComponent() {
-  let navigate = useNavigate();
-  const [credentails, setCredentials] = useState({});
+  const navigate = useNavigate(); // Utilisation de useNavigate
+  const [credentials, setCredentials] = useState({});
+
   const login = async () => {
     try {
-      let res = await LoginAPI(credentails.email, credentails.password);
-      toast.success("Signed In to Linkedin!");
-      localStorage.setItem("userEmail", res.user.email);
+      let res = await LoginAPI(credentials.email, credentials.password);
+      toast.success("Login successful");
       navigate("/home");
     } catch (err) {
-      console.log(err);
-      toast.error("Please Check your Credentials");
+      toast.error("Login failed");
     }
   };
 
+  const googleSignIn = async () => {
+    let response = await GoogleSignInAPI();
+    navigate("/home");
+  }
+
   return (
     <div className="login-wrapper">
-      <img src={LinkedinLogo} className="linkedinLogo" />
-
+      <img src={LinkedinLogo} className="linkedinLogo" alt="LinkedIn Logo" />
       <div className="login-wrapper-inner">
         <h1 className="heading">Sign in</h1>
         <p className="sub-heading">Stay updated on your professional world</p>
@@ -31,7 +35,7 @@ export default function LoginComponent() {
         <div className="auth-inputs">
           <input
             onChange={(event) =>
-              setCredentials({ ...credentails, email: event.target.value })
+              setCredentials({ ...credentials, email: event.target.value })
             }
             type="email"
             className="common-input"
@@ -39,24 +43,27 @@ export default function LoginComponent() {
           />
           <input
             onChange={(event) =>
-              setCredentials({ ...credentails, password: event.target.value })
+              setCredentials({ ...credentials, password: event.target.value })
             }
             type="password"
             className="common-input"
             placeholder="Password"
           />
+          <button onClick={login} className="login-btn">
+            Sign in
+          </button>
         </div>
-        <button onClick={login} className="login-btn">
-          Sign in
-        </button>
       </div>
       <hr className="hr-text" data-content="or" />
       <div className="google-btn-container">
+        <GoogleButton 
+          className="google-btn"
+          onClick={googleSignIn} 
+        />
         <p className="go-to-signup">
-          New to LinkedIn?{" "}
-          <span className="join-now" onClick={() => navigate("/register")}>
+          New to LinkedIn? <span className="join-now" onClick={() => navigate('/register')}>
             Join now
-          </span>
+            </span>
         </p>
       </div>
     </div>
