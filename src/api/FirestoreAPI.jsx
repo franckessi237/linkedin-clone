@@ -1,0 +1,21 @@
+import { firestore } from '../firebaseConfig';
+import {
+    addDoc,
+    collection,
+} from 'firebase/firestore';
+import { toast } from 'react-toastify';
+
+let dbRef = collection(firestore, 'posts');
+
+export const postStatus = (status) => {
+    let object = {
+        status: status,
+    };
+    addDoc(dbRef, object)
+    .then((docRef) => {
+        toast.success('Document written with ID: ', docRef.id);
+    })
+    .catch((err) => {
+        toast.error('Error adding document: ', err);
+    });
+};
