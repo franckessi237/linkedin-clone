@@ -14,6 +14,7 @@ export default function LoginComponent() {
     try {
       let res = await LoginAPI(credentials.email, credentials.password);
       toast.success("Login successful");
+      localStorage.setItem('userEmail', res.user.email);
       navigate("/home");
     } catch (err) {
       toast.error("Login failed");
