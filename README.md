@@ -1,9 +1,17 @@
-# React + Vite
+# LinkedIn Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ce projet est un clone simplifié de l'interface utilisateur de LinkedIn, construit avec Vite.js et React, et conteneurisé avec Docker.
 
-Currently, two official plugins are available:
+## Prérequis
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# linkedin-clone
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+
+- [Docker](https://www.docker.com/products/docker-desktop)
+
+## Installation
+
+1. Clonez ce dépôt sur votre machine locale :
+
+   ```bash
+   git clone git@github.com:franckessi237/linkedin-clone.git
+   cd linkedin-clone
