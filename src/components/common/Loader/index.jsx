@@ -1,14 +1,14 @@
-import React from 'react'
-import { Space, Spin } from 'antd';
+import React from "react";
+import { Space, Spin } from "antd";
 import "./index.scss";
 
-
 export default function Loader() {
-    return(
+  return (
     <div className="loader">
-        <p>loading..Please Wait..</p>
-        <Space size="middle" />
-        <Spin size= "large" />
+      <p>Loading..Please Wait..</p>
+      <Space size="middle">
+        <Spin size="large" />
+      </Space>
     </div>
-    );
+  );
 }

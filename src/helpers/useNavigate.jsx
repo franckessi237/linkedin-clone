@@ -1,5 +1,8 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const useNavigateHelper = () => {
-  return useNavigate();
+let instance = useNavigate();
+
+export const navigate = (param) => {
+  instance(param);
 };
