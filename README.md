@@ -1,34 +1,39 @@
 # LinkedIn Clone
 
-Ce projet est un clone simplifié de l'interface utilisateur de LinkedIn, construit avec Vite.js et React, et conteneurisé avec Docker.
+This project is a simplified clone of the LinkedIn user interface, built with Vite.js and React, and containerized with Docker.
 
-# Features
-1. Authentication : utilisateur existant pour la connction ou créer en 1 : essi@gmail.com; patrick@gmail.com; user@user.com; admin@admin.com / mot de passe de tout les utilisateurs : 123456789
-2. Start a Post
-3. Update a Post
-4. Delete a Post
-5. Add Connections
-6. Like and Comment on a Post
-7. Update Profile
-8. See Other Profiles
-9. Add a Profile Picture
-10. Add Post Images
-11. Search For Other Users
+## Features
+1. **Authentication**: Use an existing user to log in or create a new one. Existing users:
+   - essi@gmail.com
+   - patrick@gmail.com
+   - user@user.com
+   - admin@admin.com
+   - Password for all users: `123456789`
+2. **Start a Post**
+3. **Update a Post**
+4. **Delete a Post**
+5. **Add Connections**
+6. **Like and Comment on a Post**
+7. **Update Profile**
+8. **See Other Profiles**
+9. **Add a Profile Picture**
+10. **Add Post Images**
+11. **Search for Other Users**
 
+## Prerequisites
 
-## Prérequis
-
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
+Before you begin, make sure you have the following installed on your machine:
 
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Installation
 
-1. Clonez ce dépôt sur votre machine locale :
+1. Clone this repository to your local machine:
 
    ```bash
    git clone git@github.com:franckessi237/linkedin-clone.git
    cd linkedin-clone
+
 
 2. Construisez l'image Docker :
 
