@@ -3,12 +3,8 @@
 This project is a simplified clone of the LinkedIn user interface, built with Vite.js and React, and containerized with Docker.
 
 ## Features
-1. **Authentication**: Use an existing user to log in or create a new one. Existing users:
-   - essi@gmail.com
-   - patrick@gmail.com
-   - user@user.com
-   - admin@admin.com
-   - Password for all users: `123456789`
+1. **Authentication**
+
 2. **Start a Post**
 3. **Update a Post**
 4. **Delete a Post**
